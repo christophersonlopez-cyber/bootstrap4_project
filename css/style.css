@@ -18,24 +18,5 @@
         box-shadow: 5px 0 30px 10px #ff0000; /* balik sa pula */
       }
     }
-    h1{
-        font-size: 1.5rem;
-        font-weight: 700;
-    }
-  .sample span:after{
-    animation: words 3s infinite;
-  }
-  @keyframes words{
-0%, 33%{
-    content: 'Web Developer';
-    color: #ff0000;
-}
-
-34%, 66%{
-    content: 'assignment';
-}
-67%, 100%{
-    content: 'assignment';
-}
-
-  }
+    
+  
