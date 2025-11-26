@@ -155,19 +155,108 @@
                                 <h2 class="text-center text-primary my-5">
                                     Signup for Movie Club
                                 </h2>
-                                <button type="submit" class="btn btn-primary center">Sign Up Here</button>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Sign-up Here
+                                 </button>
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Email address</label>
                                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                 </div>
                                 
-                                    <button type="button" class="btn btn-primary popover-dismiss" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover">
+                                    <button type="button" class="btn btn-primary popover-dismiss" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Please Sign-Up">
                                      Sign-in
                                      </button>
                            </form>
 
 
                         </div>
+
+
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                           <div class="modal-dialog">
+                                 <div class="modal-content bg-info-subtle">
+                                          <div class="modal-header">
+                                            <h1 class="modal-title fs-5 " id="exampleModalLabel">Please Sign-up</h1>
+                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                          </div>
+                             <div class="modal-body">
+                                                        <form>
+                                                            <div class="mb-3">
+                                                                    <label for="firstname" class="form-label">Firstname :</label>
+                                                                    <input type="text" class="form-control" id="firstname" aria-describedby="firstname">
+                                                                    
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                    <label for="middlename" class="form-label">Middlename: :</label>
+                                                                    <input type="text" class="form-control" id="firstname" aria-describedby="middlename">
+                                                                    
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                    <label for="lastname" class="form-label">Lastname :</label>
+                                                                    <input type="text" class="form-control" id="firstname" aria-describedby="lastname">
+                                                                    
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                    <label for="email" class="form-label">Email :</label>
+                                                                    <input type="email" class="form-control" id="email" aria-describedby="email">
+                                                                    
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                                                                    <input type="password" class="form-control" id="exampleInputPassword1">
+                                                            </div>
+                                                
+                                                                </form>
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+
+
+
+
+
+
+                        <div class="modal" tabindex="-1">
+                            <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                             <h5 class="modal-title">Modal title</h5>
+                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                         <div class="modal-body">
+                                                 <p>Modal body text goes here.</p>
+                                         </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                 </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                       
                         <div class="container my-5">
                              <ul class="nav nav-inline">
@@ -207,14 +296,19 @@
 
 
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-o88Awf4dIJoR2zY2l2k1bU5yT1m1vZfD2C+q1N1DkL0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+     <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Bootstrap 5 Bundle (kasama Popper.js) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        $('.popover-dismiss').popover({
-            trigger:'focus'
-        })
-    </script>
+      $(document).ready(function() {
+          $('.popover-dismiss').popover({
+              trigger: 'focus'
+          });
+      });
+  </script>
 
 </body>
 </html>

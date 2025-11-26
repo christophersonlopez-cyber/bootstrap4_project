@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Bootstrap 5 + jQuery Popover</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body class="p-5">
+
+  <button type="button" class="btn btn-primary popover-dismiss" 
+          data-bs-toggle="popover" data-bs-placement="right" 
+          data-bs-content="Hello! This is a popover using jQuery + Bootstrap 5.">
+      Click me
+  </button>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Bootstrap 5 Bundle (kasama Popper.js) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+      $(document).ready(function() {
+          $('.popover-dismiss').popover({
+              trigger: 'focus'
+          });
+      });
+  </script>
+
+</body>
+</html>
