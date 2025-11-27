@@ -1,36 +1,312 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fade In Challenge</title>
 
-  <title>Bootstrap 5 + jQuery Popover</title>
+    <style>
+        /* Start invisible */
+     body{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 1s ease;
+     }
+     body.show{
+      opacity: 1;
+     }
+     .form_sample {
+      display: none;
+     
+      bottom: 0;
+      right: 15px;
+      border: 3px solid #f1f1f1;
+      z-index: 9;
+}
+    .keyframe{
+      animation: myanimation 5s infinite;
+      background-color: blueviolet;
+      width: 100px;
+      height: 50px;
+       position: relative;
+    }
+   @keyframes myanimation {
+  from {top: 0px;}
+  to {top: 100px;}
+}   
+    .zoom-img{
+      width: 10em;
+      cursor: zoom-in;
 
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    }
+    .zoom-img:hover{
+      width: 15em;
+    }
 
+
+    
+      #sectionone {
+       width: 300px;
+      height: 600px;
+      background-color: pink;
+      }
+
+      #sectiontwo{
+      width: 300px;
+      height: 600px;
+      background-color: rgb(217, 188, 244);
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      #slideshow img{
+        width: 200px;
+      }
+      #slideshow {
+      margin: 80px auto;
+      position: relative;
+      width: 240px;
+      height: 240px;
+      padding: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      }
+
+      #slideshow > div {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      }
+
+
+
+
+
+
+
+      #contactBtn {
+    position: fixed;         /* Sticky */
+    bottom: 20px;            /* 20px from bottom */
+    right: 20px;             /* 20px from right */
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    font-size: 16px;
+}
+
+/* Popup Form Container */
+.form-popup {
+    display: none;          /* Hidden by default */
+    position: fixed;
+    bottom: 70px;           /* above sticky button */
+    right: 20px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+    background-color: white;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+/* Form Inputs */
+.form-popup input[type=text],
+.form-popup input[type=email],
+.form-popup textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Submit Button */
+.form-popup input[type=submit] {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Close Button */
+.form-popup .close-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    float: right;
+}
+    </style>
 </head>
-<body class="p-5">
+<body>s
+<!--this website had a fade effect-->
+    <h1 class="fade-in">Welcome to My Website</h1>
+    <p class="fade-in">This paragraph fades in when the page loads.</p>
+    <div class="fade-in">You can fade in ANY element like this.</div>
 
-  <button type="button" class="btn btn-primary popover-dismiss" 
-          data-bs-toggle="popover" data-bs-placement="right" 
-          data-bs-content="Hello! This is a popover using jQuery + Bootstrap 5.">
-      Click me
-  </button>
+    <div class="section1" id="sectionone">
+      <a href="#sectiontwo">Click Me to Smooth Scroll to Section 2 below</a>
+        <form action="/action_page.php" name="myform" onsubmit="return validate()" method="post">
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname"><br>
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname"><br>
+                <label for="number">Phone Number</label><br>
+                <input type="number"name="contact">
+                <br><br>
+                <input type="submit" value="Submit">
+            </form> 
+    </div>
+            
+            <br>
+    <input type="submit" value="Open Form" onclick="openform()">
+    <input type="submit" value="Close" onclick="closeForm()">
+  <!--open a form when u press a open button-->
+    <div class="form_sample" id="myform">
+      <form action="/action_page.php" name="myform" onsubmit="return validate()" method="post">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br>
+        <label for="number">Phone Number</label><br>
+        <input type="number"name="contact">
+        <br><br>
+        <input type="submit" value="Submit">
+         
+    </form> 
 
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+      
+    </div>
 
-  <!-- Bootstrap 5 Bundle (kasama Popper.js) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="section2" id="sectiontwo">
+      <a href="#sectionone">Click Me to Smooth Scroll to Section 1 Above</a>
+         <!--keyframe sample--> 
+          <h1>The @keyframes Rule</h1>
 
-  <script>
-      $(document).ready(function() {
-          $('.popover-dismiss').popover({
-              trigger: 'focus'
-          });
-      });
-  </script>
+           <div class="keyframe"></div>
+         <p><a href="https://www.w3schools.com/">Visit W3Schools.com!</a></p>
+        <!--zoom in zoom out-->
+        <h1>Hover Over the Image to Zoom In</h1>
+         <img src="../One_page_website/images/thumb/thumbnail_1.jpg" alt="Sample Image" class="zoom-img">
+         
+
+    </div>
+    <div id="slideshow">
+        <div>
+        <img src="./img/beauty.jpg">
+        </div>
+        <div>
+        <img src="./img/ghost.jpg">
+        </div>
+        <div>
+        <img src="./img/kong.jpg">
+        </div>
+    </div>
+
+
+
+
+    <h1>Sticky Contact Button Example</h1>
+    <p>Scroll down to see the sticky contact button on the bottom right.</p>
+
+    <!-- Sticky Button -->
+    <button id="contactBtn" onclick="openForm()">Contact</button>
+
+<!-- Popup Form -->
+    <div class="form-popup" id="contactForm">
+        <button class="close-btn" onclick="closeForm()">X</button>
+        <h3>Contact Us</h3>
+        <form>
+            <input type="text" placeholder="Your Name" name="name" required>
+            <input type="email" placeholder="Your Email" name="email" required>
+            <textarea placeholder="Your Message" name="message" rows="4" required></textarea>
+            <input type="submit" value="Send">
+        </form>
+    </div>
+        
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // Wait until the page is loaded, then add the "show" class
+        window.addEventListener("load", () => {
+            document.body.classList.add("show");
+        });
+
+
+        function validate(){
+          var test=document.forms["myform"]["fname"].value;
+          var test1=document.forms["myform"]["lname"].value;
+          var test2=document.forms["myform"]["contact"].value;
+          
+          if (test==""){
+             alert("Please fill a firstname");
+        return false;
+          }
+        else if(test1==""){
+          alert("Please Lastname");
+          return false;
+        }
+        else if(test2==""){
+          alert("Please Contact");
+          return false;
+        }
+      
+        }
+        function openform(){
+          document.getElementById("myform").style.display="block";
+        }
+        function closeForm() {
+           document.getElementById("myform").style.display = "none";
+} 
+        $("#slideshow > div:gt(0)").hide();
+
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $("#slideshow > div:gt(0)").hide();
+
+setInterval(function() {
+  $('#slideshow > div:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#slideshow');
+}, 1000);
+    </script>
+    <script>
+      function openForm() {
+          document.getElementById("contactForm").style.display = "block";
+      }
+
+      function closeForm() {
+          document.getElementById("contactForm").style.display = "none";
+      }
+</script>
 
 </body>
 </html>

@@ -35,6 +35,7 @@
 
         </div>
     </section>
+    
     <section>
             <div class="image-container">
                 <video autoplay muted loop>
@@ -104,6 +105,14 @@
     </footer> 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-o88Awf4dIJoR2zY2l2k1bU5yT1m1vZfD2C+q1N1DkL0=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+        // Add "show" class to body once the page loads
+        window.addEventListener("load", () => {
+            document.body.classList.add("show");
+        });
+    </script>
+
 <script>
     const popover = new bootstrap.Popover('.example-popover', {
   container: '.modal-body'

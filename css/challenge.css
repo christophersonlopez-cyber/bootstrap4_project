@@ -6,11 +6,17 @@ html{
         text-align: center;
         align-items: center;
 }
-body{
-  
-        background-color: black;
-        color: aliceblue;
-}
+body {
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        /* Pag ready na ang page */
+        body.show {
+            opacity: 1;
+        }
+     
+
 .image-container {
         position: relative;       
         width: 600px;
@@ -139,6 +145,9 @@ tr:nth-child(even) {
 .hovereffect{
     color:#dddddd;
     margin: 80px;
+}
+p{
+        font-size: 5vw;
 }
 .hovereffect p:hover{
     color: #f71c1c;
